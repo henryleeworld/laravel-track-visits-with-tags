@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVisitsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateVisitsTable extends Migration
     public function up()
     {
         Schema::create('visits', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('primary_key');
             $table->string('secondary_key')->nullable();
             $table->unsignedBigInteger('score');
@@ -34,4 +34,4 @@ class CreateVisitsTable extends Migration
     {
         Schema::dropIfExists('visits');
     }
-}
+};

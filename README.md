@@ -1,4 +1,4 @@
-# Laravel 8 帶有標籤追蹤訪問
+# Laravel 10 帶有標籤追蹤訪問
 
 引入 awssat 的 laravel-visits 套件來擴增追蹤訪問計數器，可以附加到任何模型上（帶有標籤、IP 防護和快取）。
 

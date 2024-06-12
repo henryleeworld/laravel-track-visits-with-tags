@@ -6,12 +6,12 @@ return [
     | Database Engine & Connection Name
     |--------------------------------------------------------------------------
     |
-    | Supported Engines: "redis", "eloquent"
+    | Supported Engines: \Awssat\Visits\DataEngines\RedisEngine::class, \Awssat\Visits\DataEngines\EloquentEngine::class
     | Connection Name: see config/database.php 
     |
     */
-    'engine' => 'eloquent',
-    'connection' => 'mysql',
+    'engine' => \Awssat\Visits\DataEngines\EloquentEngine::class, // \Awssat\Visits\DataEngines\RedisEngine::class
+    'connection' => 'laravel-visits',
 
 
     /*
