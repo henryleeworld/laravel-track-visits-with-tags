@@ -9,22 +9,22 @@ class UserController extends Controller
     public function index()
     {
         $user = User::find(1);
-        echo $user->name . ' ' . '拜訪次數：' . visits($user)->count() . PHP_EOL;
-        echo $user->name . ' ' . '新增拜訪 1 次' . PHP_EOL;
+        echo $user->name . __('\'s number of visits: ') . visits($user)->count() . PHP_EOL;
+        echo $user->name . ' ' . __('added :visit_times visit', ['visit_times' => ($visitTimes = 1)]) . PHP_EOL;
         visits($user)->seconds(1)->increment();
         sleep(1);
-        echo $user->name . ' ' . '拜訪次數：' . visits($user)->count() . PHP_EOL;
-        echo $user->name . ' ' . '減少拜訪 1 次' . PHP_EOL;
+        echo $user->name . __('\'s number of visits: ') . visits($user)->count() . PHP_EOL;
+        echo $user->name . ' ' . __('reduced :visit_times visit', ['visit_times' => ($visitTimes = 1)]) . PHP_EOL;
         visits($user)->seconds(1)->decrement();
         sleep(1);
-        echo $user->name . ' ' . '拜訪次數：' . visits($user)->count() . PHP_EOL;
-        echo $user->name . ' ' . '新增拜訪 3 次' . PHP_EOL;
-        visits($user)->seconds(1)->increment(3);
+        echo $user->name . __('\'s number of visits: ') . visits($user)->count() . PHP_EOL;
+        echo $user->name . ' ' . __('added :visit_times visits', ['visit_times' => ($visitTimes = 3)]) . PHP_EOL;
+        visits($user)->seconds(1)->increment($visitTimes);
         sleep(1);
-        echo $user->name . ' ' . '拜訪次數：' . visits($user)->count() . PHP_EOL;
-        echo $user->name . ' ' . '減少拜訪 2 次' . PHP_EOL;
-        visits($user)->seconds(1)->decrement(2);
+        echo $user->name . __('\'s number of visits: ') . visits($user)->count() . PHP_EOL;
+        echo $user->name . ' ' . __('reduced :visit_times visits', ['visit_times' => ($visitTimes = 2)]) . PHP_EOL;
+        visits($user)->seconds(1)->decrement($visitTimes);
         sleep(1);
-        echo $user->name . ' ' . '拜訪次數：' . visits($user)->count() . PHP_EOL;
+        echo $user->name . __('\'s number of visits: ') . visits($user)->count() . PHP_EOL;
     }
 }

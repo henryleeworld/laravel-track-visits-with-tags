@@ -1,4 +1,4 @@
-# Laravel 10 帶有標籤追蹤訪問
+# Laravel 11 帶有標籤追蹤訪問
 
 引入 awssat 的 laravel-visits 套件來擴增追蹤訪問計數器，可以附加到任何模型上（帶有標籤、IP 防護和快取）。
 
@@ -26,5 +26,5 @@ $ php artisan migrate --seed
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/mLOV6J7.png)
+![](https://i.imgur.com/JduFV1K.png)
 > 每 15 分鐘只能使用遞增/遞減一次（預設）。也可以使用強制方法或通過設置或經由秒數方法來修改時間
